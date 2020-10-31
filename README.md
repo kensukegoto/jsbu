@@ -1,24 +1,25 @@
-# jsbu
+# git
 
-## Project setup
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
+追加：コンポーネントでSassを使える
+追加：ミックスインを全コンポーネントで使える
+追加：共通CSS（リセットCSS）などを設定する
 ```
 
-### Compiles and minifies for production
+# 目標
+
 ```
-yarn build
+・v-modeをcomputedと組み合わせて使う
+・slotを使う（省略記法で）
+・inheritAttrsのtrue、false
+・$attrsでinputへ属性を渡す
+・Composition APIを使う
+・propsは型と必須とデフォルトを設定
+・emitするときはemitsで宣言する
+・vuexを使う
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
+# ディレクトリ
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+/src/composable
+/src/core
