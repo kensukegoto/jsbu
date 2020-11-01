@@ -118,7 +118,7 @@ export default {
 .burger{
   position: fixed;
   right: 12px;
-  top: 14px;
+  top: 18px;
   @include media(m){
     display: none;
   }
