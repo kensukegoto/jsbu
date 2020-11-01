@@ -1,18 +1,14 @@
 <template>
-  <div class="test">
-    <p>テストです。</p>
-    <p class="white">白です。</p>
-  </div>
-  <img alt="Vue logo" src="./assets/image/logo.png">
+  <Header />
 </template>
 
 <script>
-
+import Header from "@/components/block/b-Header";
 
 export default {
   name: 'App',
   components: {
-
+    Header
   }
 }
 </script>
