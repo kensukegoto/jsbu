@@ -1,34 +1,39 @@
 <template>
-  <div class="shadow" v-show="state.isActive"></div>
-  <div class="gnavi" v-show="state.isActive">
+  <div class="shadow" v-show="isActive"></div>
+  <div class="gnavi" v-show="isActive">
     <ul class="gnavi__lists">
       <li><a>ニュース一覧</a></li>
       <li><a>メンバー</a></li>
       <li><a>体験入部</a></li>
     </ul>
   </div>
-  <Burger class="burger" @click="changeActive" :isActive="state.isActive" />
+  <Burger class="burger" @click="changeActive" :isActive="isActive" />
 </template>
 
 <script>
-import Burger from "@/components/component/c-Burger";
-import { reactive } from "vue"
+import Burger from "@/components/component/c-Burger"
+import { ref,watch } from "vue"
+import getWinW from '@/core/windowWidth'
 
 export default {
   components:{
     Burger
   },
   setup() {
-    const state = reactive({
-      isActive: false
-    })
+
+    const isActive = ref(false)
+    const winW = ref(getWinW())
 
     function changeActive(){
-      state.isActive = !state.isActive;
+      isActive.value = !isActive.value;
     }
 
+    watch(winW,() => {
+      if(isActive.value && winW.value > 600) isActive.value = false
+    })
+
     return {
-      state,
+      isActive,
       changeActive
     }
   }

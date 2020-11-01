@@ -1,5 +1,6 @@
 <template>
   <Header />
+  <main></main>
 </template>
 
 <script>
@@ -14,14 +15,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.test {
-  p {
-    font-size: 100%;
-    color: $black;
-    &.white {
-      color: $white;
-    }
-  }
-
+main {
+  min-height: 2000px;
+  background: red;
 }
 </style>
