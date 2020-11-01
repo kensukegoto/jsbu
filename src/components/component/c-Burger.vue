@@ -1,8 +1,10 @@
 <template>
   <a :class="{active : isActive}">
-    <span></span>
-    <span></span>
-    <span></span>
+    <p>
+      <span></span>
+      <span></span>
+      <span></span>
+    </p>
   </a>
 </template>
 
@@ -21,6 +23,16 @@ export default {
 a{
   width: 44px;
   height: 44px;
+  background: #181818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  p{
+    position: relative;
+    width: 50%;
+    height: 50%;
+
+  }
   span {
     position: absolute;
     display: block;
@@ -47,14 +59,14 @@ a{
 
 }
 a.active{
-
+  background: #fff;
   span{
-    background-color: #000;
-     &:first-child{
+    background: #181818;
+    &:first-child{
       top: 0;
       left: 0;
       transform-origin: top left;
-      transform: rotate(45deg);
+      transform: translate(2.5px,2.5px) rotate(45deg);
     }
     &:nth-child(2){
       top: 50%;
@@ -66,8 +78,8 @@ a.active{
       bottom: 0;
       left: 0;
       transform-origin: bottom left;
-      // 13としたいが2pxの太さを考慮して11px
-      transform: translateY(-11px) rotate(-45deg);
+      // 7としたいが2pxの太さを考慮して5px
+      transform: translate(2.5px,-2.5px) rotate(-45deg);
     }
   }
 }
