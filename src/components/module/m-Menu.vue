@@ -32,6 +32,20 @@ export default {
       if(isActive.value && winW.value > 600) isActive.value = false
     })
 
+    watch(isActive,() => {
+      let scY;
+      if(!isActive.value) {
+        scY = document.body.style.top
+        document.body.style.position = ''
+        document.body.style.top = ''
+        window.scrollTo(0, parseInt(scY || '0') * -1);
+        return
+      } 
+      scY = window.pageYOffset || document.documentElement.scrollTop || 0
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scY}px`
+    })
+
     return {
       isActive,
       changeActive
