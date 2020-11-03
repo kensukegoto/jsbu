@@ -25,9 +25,12 @@ section{
   .inner {
     padding: 14px 12px;
     height: 100%;
-    width: 960px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
+    @include media(m){
+      width: 960px;
+    }
     .logo {
       height: 100%;
     }
