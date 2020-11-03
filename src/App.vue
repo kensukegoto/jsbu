@@ -3,6 +3,7 @@
   <Slider class="slider" />
   <About class="about" />
   <List class="list" />
+  <Footer />
 </template>
 
 <script>
@@ -10,6 +11,7 @@ import Header from "@/components/block/b-Header";
 import Slider from "@/components/block/b-Slider";
 import About from "@/components/block/b-About";
 import List from "@/components/block/b-List";
+import Footer from "@/components/block/b-Footer";
 
 
 export default {
@@ -18,7 +20,8 @@ export default {
     Header,
     Slider,
     About,
-    List
+    List,
+    Footer
   }
 }
 </script>
