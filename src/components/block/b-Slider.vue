@@ -171,7 +171,6 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-
 .sec__inner{
   background-color: $yellow;
   width: 100%;

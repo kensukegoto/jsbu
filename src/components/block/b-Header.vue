@@ -20,6 +20,8 @@ export default {
 
 <style lang="scss" scoped>
 section{
+  position: relative;
+  z-index: 10;
   height: 80px;
   background-color: $black;
   .inner {
