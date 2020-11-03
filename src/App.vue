@@ -1,15 +1,18 @@
 <template>
   <Header />
-  <main></main>
+  <Slider class="slider" />
 </template>
 
 <script>
 import Header from "@/components/block/b-Header";
+import Slider from "@/components/block/b-Slider";
+
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Slider,
   }
 }
 </script>
@@ -17,6 +20,11 @@ export default {
 <style lang="scss" scoped>
 main {
   min-height: 2000px;
-  background: red;
+}
+.slider{
+  margin-top: 40px;
+  @include media(m){
+    margin-top: 48px;
+  }
 }
 </style>
