@@ -1,11 +1,13 @@
 <template>
   <Header />
   <Slider class="slider" />
+  <About class="about" />
 </template>
 
 <script>
 import Header from "@/components/block/b-Header";
 import Slider from "@/components/block/b-Slider";
+import About from "@/components/block/b-About";
 
 
 export default {
@@ -13,6 +15,7 @@ export default {
   components: {
     Header,
     Slider,
+    About
   }
 }
 </script>
@@ -26,5 +29,8 @@ main {
   @include media(m){
     margin-top: 48px;
   }
+}
+.about{
+  margin-top: 32px;
 }
 </style>
