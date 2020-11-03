@@ -38,7 +38,7 @@ a{
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #fff;
+    background-color: $white;
     transition: transform .5s,background-color .5s,opacity .5s;
     &:first-child{
       top: 0;
@@ -59,9 +59,9 @@ a{
 
 }
 a.active{
-  background: #fff;
+  background: $white;
   span{
-    background: #181818;
+    background: $black;
     &:first-child{
       top: 0;
       left: 0;

@@ -63,7 +63,7 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #000;
+  background-color: $kkk;
   opacity: .8;
   @include media(m){
     display: none;
@@ -102,8 +102,8 @@ export default {
     @include media(m){
       display: flex;
       align-items: center;
-      color: #fff;
-      font-size: 14px;
+      color: $white;
+      font-size: 1.4rem;
       li {
         margin-top: 0;
         margin-left: 80px;

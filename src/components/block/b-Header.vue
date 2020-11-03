@@ -21,7 +21,7 @@ export default {
 <style lang="scss" scoped>
 section{
   height: 80px;
-  background-color: #181818;
+  background-color: $black;
   .inner {
     padding: 14px 12px;
     height: 100%;

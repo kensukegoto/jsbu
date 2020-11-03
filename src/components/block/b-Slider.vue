@@ -105,14 +105,14 @@ export default {
       width: 100%;
       line-height: 48px;
       padding: 0 12px;
-      background-color: rgba(255,255,255,.8);
+      background-color: rgba($white,.8);
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
       @include media(m){
         height: 60px;
         line-height: 60px;
-        font-size: 18px;
+        font-size: 1.8rem;
       }
     }
   }
@@ -126,10 +126,10 @@ export default {
     display: flex;
     width: 48px;
     height: 48px;
-    background: #181818;
+    background: $black;
   }
   &::after{
-    color: #fff;
+    color: $white;
     font-size: 36px;
   }
   &-next {
@@ -155,11 +155,11 @@ export default {
       bottom: -36px;
     }
     &-bullet {
-      background-color: #fff;
+      background-color: $white;
       margin-right: 8px;
       opacity: 1;
       &-active{
-        background-color: #000;
+        background-color: $kkk;
       }
       &:last-child{
         margin-right: 0;
@@ -173,7 +173,7 @@ export default {
 <style lang="scss" scoped>
 
 .sec__inner{
-  background-color: #f0db4f;
+  background-color: $yellow;
   width: 100%;
   margin: 0 auto;
   padding-bottom: 40px;

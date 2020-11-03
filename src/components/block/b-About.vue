@@ -28,6 +28,7 @@
     margin-top: 20px;
     font-size: 1.4rem;
     font-weight: normal;
+    line-height: 1.6;
     @include media(m){
       font-size: 1.6rem;
       margin-top: 32px;
