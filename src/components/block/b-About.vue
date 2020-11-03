@@ -17,6 +17,7 @@
     padding: 0;
   }
   .title{
+    line-height: 1;
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
