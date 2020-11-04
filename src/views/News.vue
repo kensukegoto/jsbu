@@ -7,11 +7,9 @@
       <p class="select">"全て"</p>
       <div class="card-box__outer">
         <ul class="card-box">
-          <li class="item"><mCard /></li>
-          <li class="item"><mCard /></li>
-          <li class="item"><mCard /></li>
-          <li class="item"><mCard /></li>
-          <li class="item"><mCard /></li>
+          <li class="item" v-for="(item,key) of list" :key="key">
+            <mCard :attr="item" />
+          </li>
         </ul>
       </div>
     </section>
@@ -24,12 +22,28 @@ import bPankuzu from "@/components/block/b-Pankuzu";
 import mTab from "@/components/module/m-Tab";
 import mCard from "@/components/module/m-Card";
 // import bList from "@/components/block/b-List";
+import axios from "axios"
+
 export default {
   components:{
     bPankuzu,
     mTab,
     mCard
     // bList
+  },
+  data(){
+    return {
+      list: []
+    }
+  },
+  created(){
+    axios.get('/data/all.json')
+      .then((response) => {
+        this.list = response.data;
+      })
+      .catch((e) => {
+        alert(e);
+      });
   }
 }
 </script>

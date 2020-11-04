@@ -2,11 +2,9 @@
   <section class="list">
     <div class="list__inner">
       <ul class="card__box">
-        <li class="item"><mCard /></li>
-        <li class="item"><mCard /></li>
-        <li class="item"><mCard /></li>
-        <li class="item"><mCard /></li>
-        <li class="item"><mCard /></li>
+          <li class="item" v-for="(item,key) of list" :key="key">
+            <mCard :attr="item" />
+          </li>
       </ul>
       <a class="btn">ニュース一覧へ</a>
     </div>
@@ -15,9 +13,25 @@
 
 <script>
 import mCard from "@/components/module/m-Card";
+import axios from "axios"
+
 export default {
   components:{
     mCard
+  },
+  data(){
+    return {
+      list: []
+    }
+  },
+  created(){
+    axios.get('/data/all.json')
+      .then((response) => {
+        this.list = response.data;
+      })
+      .catch((e) => {
+        alert(e);
+      });
   }
 }
 </script>

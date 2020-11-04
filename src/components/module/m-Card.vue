@@ -2,18 +2,23 @@
   <article class="card">
     <a class="tmb">
       <figure>
-        <img src="/image/img_01.jpg" alt="">
+        <img :src="`/image/${attr.image}`" alt="">
       </figure>
     </a>
     <div class="txt">
       <time>2020.11.3</time>
-      <h3><a>ペルシャは、ネコの品種の一つペルシャは、ネコ</a></h3>
-      <p>長く密集した被毛、ずんぐりした体つき、短い足、離れた両目の幅広の顔といった特徴をもつ。横顔は額、鼻、あごが一直線に並び、起伏の少ない低い鼻を有する。</p>
-      <a class="tag">トピック</a>
+      <h3><a>{{ attr.title }}</a></h3>
+      <p>{{ attr.description }}</p>
+      <a class="tag">{{ attr.category }}</a>
     </div>
   </article>
 </template>
 
+<script>
+export default {
+  props: [ 'attr' ]
+}
+</script>
 <style lang="scss" scoped>
 .card{
   display: flex;

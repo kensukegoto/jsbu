@@ -11,6 +11,7 @@ import bSlider from "@/components/block/b-Slider";
 import bAbout from "@/components/block/b-About";
 import bList from "@/components/block/b-List";
 
+
 export default {
   name: 'App',
   components: {
