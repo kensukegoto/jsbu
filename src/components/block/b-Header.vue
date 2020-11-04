@@ -32,6 +32,7 @@ section{
     display: flex;
     @include media(m){
       width: 960px;
+      padding: 14px 0;
     }
     .logo {
       height: 100%;
