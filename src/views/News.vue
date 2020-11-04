@@ -26,7 +26,7 @@ export default {
   padding: 28px 12px 0;
   background-color: $yellow;
   @include media(m){
-    padding-top: 36px;
+    padding: 36px 0 0;
   }
 }
 h2 {

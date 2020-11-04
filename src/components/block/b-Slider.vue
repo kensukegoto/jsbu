@@ -134,11 +134,15 @@ export default {
   }
   &-next {
     right: 0;
-    transform: translateX(50%);
+    @include media(l){
+      transform: translateX(50%);
+    }
   }
   &-prev {
     left: 0;
-    transform: translateX(-50%);
+    @include media(l){
+      transform: translateX(-50%);
+    }
   }
 
 }
