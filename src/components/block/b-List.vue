@@ -50,9 +50,9 @@ export default {
     padding-top: 32px;
     padding-bottom: 20px;
   }
-
 }
 .btn{
+  margin-top: 32px;
   height: 48px;
   display: flex;
   justify-content: center;
@@ -62,7 +62,7 @@ export default {
   background-color: $black;
   @include media(m){
     width: 150px;
-    margin: 0 auto;
+    margin: 36px auto;
   }
 }
 </style>

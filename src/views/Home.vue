@@ -1,7 +1,9 @@
 <template>
-  <bSlider class="slider" />
-  <bAbout class="about" />
-  <bList class="list" />
+  <main>
+    <bSlider class="slider" />
+    <bAbout class="about" />
+    <bList class="list" />
+  </main>
 </template>
 
 <script>
@@ -20,9 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main {
-  min-height: 2000px;
-}
+
 .slider{
   margin-top: 40px;
   @include media(m){
