@@ -1,5 +1,5 @@
 <template>
-  <article class="m-card">
+  <article class="card">
     <a class="tmb">
       <figure>
         <img src="@/assets/image/img_01.jpg" alt="">
@@ -15,7 +15,7 @@
 </template>
 
 <style lang="scss" scoped>
-.m-card{
+.card{
   display: flex;
   .tmb{
     width: 50%;

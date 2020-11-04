@@ -1,6 +1,6 @@
 <template>
-  <div class="outer">
-    <ul>
+  <div class="tab__outer">
+    <ul class="tab">
       <li class="active"><a>全て</a></li>
       <li><a>お知らせ</a></li>
       <li><a>イベント</a></li>
@@ -11,11 +11,11 @@
 </template>
 
 <style lang="scss" scoped>
-.outer {
-  overflow-x: auto;
-  text-align: center;
-}
-ul {
+.tab {
+  &__outer{
+    overflow-x: auto;
+    text-align: center;
+  }
   display: inline-block;
   white-space: nowrap;
   li {

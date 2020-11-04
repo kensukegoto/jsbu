@@ -1,12 +1,12 @@
 <template>
-  <section class="sec">
+  <section class="about">
     <p class="title">JS部とは？</p>
     <h1 class="text">ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 長毛種の代表的な品種で、古くからショーキャットとして認められる品種の一つである。</h1>
   </section>
 </template>
 
 <style lang="scss" scoped>
-.sec{
+.about{
 
   padding-right: 12px;
   padding-left: 12px;

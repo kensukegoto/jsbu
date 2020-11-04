@@ -1,12 +1,12 @@
 <template>
-  <section class="sec">
-    <div class="sec__inner">
+  <section class="list">
+    <div class="list__inner">
       <ul class="card__box">
-        <li class="card"><Card /></li>
-        <li class="card"><Card /></li>
-        <li class="card"><Card /></li>
-        <li class="card"><Card /></li>
-        <li class="card"><Card /></li>
+        <li class="item"><mCard /></li>
+        <li class="item"><mCard /></li>
+        <li class="item"><mCard /></li>
+        <li class="item"><mCard /></li>
+        <li class="item"><mCard /></li>
       </ul>
       <a class="btn">ニュース一覧へ</a>
     </div>
@@ -14,16 +14,16 @@
 </template>
 
 <script>
-import Card from "@/components/module/m-Card";
+import mCard from "@/components/module/m-Card";
 export default {
   components:{
-    Card
+    mCard
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.sec{
+.list{
   padding: 12px 12px 32px;
   background-color: $yellow;
   @include media(m){
@@ -39,7 +39,7 @@ export default {
     }
   }
 }
-.card {
+.item {
   &__box {
     margin-bottom: 32px;
   }

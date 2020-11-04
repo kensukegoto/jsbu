@@ -1,20 +1,20 @@
 <template>
-  <Slider class="slider" />
-  <About class="about" />
-  <List class="list" />
+  <bSlider class="slider" />
+  <bAbout class="about" />
+  <bList class="list" />
 </template>
 
 <script>
-import Slider from "@/components/block/b-Slider";
-import About from "@/components/block/b-About";
-import List from "@/components/block/b-List";
+import bSlider from "@/components/block/b-Slider";
+import bAbout from "@/components/block/b-About";
+import bList from "@/components/block/b-List";
 
 export default {
   name: 'App',
   components: {
-    Slider,
-    About,
-    List,
+    bSlider,
+    bAbout,
+    bList,
   }
 }
 </script>

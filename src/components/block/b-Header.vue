@@ -1,10 +1,10 @@
 <template>
-  <section>
+  <header>
     <div class="inner">
       <Logo class="logo" />
       <Menu />
     </div>
-  </section>
+  </header>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section{
+header{
   position: relative;
   z-index: 10;
   height: 80px;

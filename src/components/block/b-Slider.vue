@@ -1,6 +1,6 @@
 <template>
-  <section class="sec">
-    <div class="sec__inner">
+  <section class="slider">
+    <div class="slider__inner">
       <div class="swiper__wrapper">
         <swiper
           :slides-per-view="1"
@@ -176,7 +176,7 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-.sec__inner{
+.slider__inner{
   background-color: $yellow;
   width: 100%;
   margin: 0 auto;

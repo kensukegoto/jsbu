@@ -1,5 +1,5 @@
 <template>
-  <section class="sec">
+  <section class="pankuzu__outer">
     <ul class="pankuzu">
       <li class="pankuzu__item"><router-link to="/">TOP</router-link></li>
       <li class="pankuzu__item">記事一覧</li>
@@ -8,14 +8,15 @@
 </template>
 
 <style lang="scss" scoped>
-.sec {
-  background-color: $greyLight;
-  padding: 12px;
-  @include media(m){
-    padding: 16px 0;
-  }
-}
+
 .pankuzu {
+  &__outer{
+    background-color: $greyLight;
+    padding: 12px;
+    @include media(m){
+      padding: 16px 0;
+    }
+  }
   display: flex;
   font-size: 1.4rem;
   @include media(m){
