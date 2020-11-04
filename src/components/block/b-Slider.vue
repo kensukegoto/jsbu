@@ -13,7 +13,7 @@
             },
           }"
           :loop='true'
-          looped-slides='2'
+          :looped-slides="2"
           :navigation="{
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
