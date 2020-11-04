@@ -27,37 +27,37 @@
         >
           <swiper-slide class="slide">
             <a>
-              <img src="@/assets/image/img_01.jpg" alt="">
+              <img src="/image/img_01.jpg" alt="">
               <h3>ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 </h3>
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
             <a>
-              <img src="@/assets/image/img_02.jpg" alt="">
+              <img src="/image/img_02.jpg" alt="">
               <h3>ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 </h3>
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
             <a>
-              <img src="@/assets/image/img_03.jpg" alt="">
+              <img src="/image/img_03.jpg" alt="">
               <h3>ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 </h3>
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
             <a>
-              <img src="@/assets/image/img_04.jpg" alt="">
+              <img src="/image/img_04.jpg" alt="">
               <h3>ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 </h3>
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
             <a>
-              <img src="@/assets/image/img_05.jpg" alt="">
+              <img src="/image/img_05.jpg" alt="">
               <h3>ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 </h3>
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
             <a>
-              <img src="@/assets/image/img_06.jpg" alt="">
+              <img src="/image/img_06.jpg" alt="">
               <h3>ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 </h3>
             </a>
           </swiper-slide>

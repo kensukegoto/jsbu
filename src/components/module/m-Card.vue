@@ -2,7 +2,7 @@
   <article class="card">
     <a class="tmb">
       <figure>
-        <img src="@/assets/image/img_01.jpg" alt="">
+        <img src="/image/img_01.jpg" alt="">
       </figure>
     </a>
     <div class="txt">
