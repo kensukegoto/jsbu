@@ -2,7 +2,8 @@
   <div class="shadow" v-show="isActive"></div>
   <div class="gnavi" v-show="isActive">
     <ul class="gnavi__lists">
-      <li><a>ニュース一覧</a></li>
+      
+      <li><router-link to="/news">ニュース一覧</router-link></li>
       <li><a>メンバー</a></li>
       <li><a>体験入部</a></li>
     </ul>

@@ -1,3 +1,3 @@
 <template>
-  <p><img src="@/assets/image/logo.png" alt=""></p>
+  <router-link to="/"><img src="@/assets/image/logo.png" alt=""></router-link>
 </template>
