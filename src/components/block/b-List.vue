@@ -2,7 +2,7 @@
   <section class="list">
     <div class="list__inner">
       <ul class="card__box">
-          <li class="item" v-for="(item,key) of list" :key="key">
+          <li class="item" v-for="(item,key) of newlist" :key="key">
             <mCard :attr="item" />
           </li>
       </ul>
@@ -32,6 +32,11 @@ export default {
       .catch((e) => {
         alert(e);
       });
+  },
+  computed:{
+    newlist(){
+      return this.list.slice(0,5)
+    }
   }
 }
 </script>
