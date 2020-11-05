@@ -26,6 +26,7 @@ export default {
     width: 50%;
     @include media(m){
       width: 284px;
+      flex-shrink: 0;
     }
     a{
       display: block;
