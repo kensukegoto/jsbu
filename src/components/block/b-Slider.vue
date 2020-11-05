@@ -1,7 +1,7 @@
 <template>
   <section class="slider">
     <div class="slider__inner">
-      <div class="swiper__wrapper">
+      <div class="swiper__wrapper" v-if="isReady">
         <swiper
           :slides-per-view="1"
           :space-between="0"
@@ -13,7 +13,7 @@
             },
           }"
           :loop='true'
-          :looped-slides="2"
+          :looped-slides="12"
           :navigation="{
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
@@ -25,40 +25,10 @@
           @swiper="onSwiper"
           @slideChange="onSlideChange"
         >
-          <swiper-slide class="slide">
+          <swiper-slide class="slide" v-for="(item,key) of slideList" :key="key">
             <a>
-              <img src="/image/img_01.jpg" alt="">
-              <h3>ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 </h3>
-            </a>
-          </swiper-slide>
-          <swiper-slide class="slide">
-            <a>
-              <img src="/image/img_02.jpg" alt="">
-              <h3>ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 </h3>
-            </a>
-          </swiper-slide>
-          <swiper-slide class="slide">
-            <a>
-              <img src="/image/img_03.jpg" alt="">
-              <h3>ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 </h3>
-            </a>
-          </swiper-slide>
-          <swiper-slide class="slide">
-            <a>
-              <img src="/image/img_04.jpg" alt="">
-              <h3>ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 </h3>
-            </a>
-          </swiper-slide>
-          <swiper-slide class="slide">
-            <a>
-              <img src="/image/img_05.jpg" alt="">
-              <h3>ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 </h3>
-            </a>
-          </swiper-slide>
-          <swiper-slide class="slide">
-            <a>
-              <img src="/image/img_06.jpg" alt="">
-              <h3>ペルシャは、ネコの品種の一つ。ペルシャ猫。イラン原産。 </h3>
+              <img :src="`/image/${item.image}`" alt="">
+              <h3>{{ item.title }}</h3>
             </a>
           </swiper-slide>
         </swiper>
@@ -73,18 +43,37 @@
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore, { Navigation,Pagination } from 'swiper';
+import axios from "axios"
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 SwiperCore.use([ Navigation,Pagination ]);
+
 export default {
   name: 'Slider',
   data: () => ({
-    mySwiper : null
+    mySwiper : null,
+    isReady: false,
+    list : []
   }),
+  beforeCreate(){
+    axios.get('/data/all.json')
+      .then((response) => {
+        this.list = response.data;
+        this.isReady = true
+      })
+      .catch((e) => {
+        alert(e);
+      });
+  },
   components: {
     Swiper,
     SwiperSlide,
+  },
+  computed:{
+    slideList(){
+      return this.list.slice(0,6)
+    }
   }
 }
 </script>

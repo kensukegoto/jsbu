@@ -24,7 +24,7 @@ export default {
       list: []
     }
   },
-  created(){
+  async beforeCreate(){
     axios.get('/data/all.json')
       .then((response) => {
         this.list = response.data;
