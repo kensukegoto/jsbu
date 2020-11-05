@@ -3,7 +3,7 @@
   <main>
     <section>
       <h2>ニュース一覧</h2>
-      <mTab class="m-tab" />
+      <mTab class="m-tab" :type="type" @change-tab="type => changeTab(type)" />
       <p class="select">"全て"</p>
       <div class="card-box__outer">
         <ul class="card-box">
@@ -33,17 +33,42 @@ export default {
   },
   data(){
     return {
-      list: []
+      type: 'all',
+      list: [],
+      all:[],
+      info:[],
+      topic:[],
+      event:[],
+      report:[]
     }
   },
   created(){
     axios.get('/data/all.json')
       .then((response) => {
-        this.list = response.data;
+        this.all = response.data
+        this.list = [...this.all]
       })
       .catch((e) => {
         alert(e);
       });
+  },
+  methods:{
+    changeTab(type){
+      this.type = type
+      if(this[type].length) {
+        this.list = this[type]
+        return
+      }
+
+      axios.get(`/data/${type}.json`)
+        .then((response) => {
+          this[type] = response.data
+          this.list = [...this[type]]
+        })
+        .catch((e) => {
+          alert(e);
+        });
+    }
   }
 }
 </script>

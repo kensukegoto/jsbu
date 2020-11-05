@@ -1,14 +1,30 @@
 <template>
   <div class="tab__outer">
     <ul class="tab">
-      <li class="active"><a>全て</a></li>
-      <li><a>お知らせ</a></li>
-      <li><a>イベント</a></li>
-      <li><a>トピック</a></li>
-      <li><a>レポート</a></li>
+      <li :class="type === 'all' ? 'active' : ''"><a @click="()=>{changeTab('all')}">全て</a></li>
+      <li :class="type === 'info' ? 'active' : ''"><a @click="()=>{changeTab('info')}">お知らせ</a></li>
+      <li :class="type === 'event' ? 'active' : ''"><a @click="()=>{changeTab('event')}">イベント</a></li>
+      <li :class="type === 'topic' ? 'active' : ''"><a @click="()=>{changeTab('topic')}">トピック</a></li>
+      <li :class="type === 'report' ? 'active' : ''"><a @click="()=>{changeTab('report')}">レポート</a></li>
     </ul>
   </div>
 </template>
+
+<script>
+export default {
+  methods:{
+    changeTab(type){
+      this.$emit('change-tab',type)
+    }
+  },
+  props: {
+    type: {
+      type: String,
+      required: true
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .tab {
