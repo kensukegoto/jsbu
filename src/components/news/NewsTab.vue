@@ -1,11 +1,14 @@
 <template>
   <div class="tab__outer">
     <ul class="tab">
-      <li :class="type === 'all' ? 'active' : ''"><a @click="()=>{changeTab('all')}">全て</a></li>
-      <li :class="type === 'info' ? 'active' : ''"><a @click="()=>{changeTab('info')}">お知らせ</a></li>
-      <li :class="type === 'event' ? 'active' : ''"><a @click="()=>{changeTab('event')}">イベント</a></li>
-      <li :class="type === 'topic' ? 'active' : ''"><a @click="()=>{changeTab('topic')}">トピック</a></li>
-      <li :class="type === 'report' ? 'active' : ''"><a @click="()=>{changeTab('report')}">レポート</a></li>
+      <li 
+        v-for="(name,key) of Object.keys(tablist)" 
+        :key="key"
+        :class="type === name ? 'active' : ''"
+        @click="()=>{changeTab(name)}"
+      >
+      <a>{{ tablist[name] }}</a>
+      </li>
     </ul>
   </div>
 </template>
@@ -20,6 +23,10 @@ export default {
   props: {
     type: {
       type: String,
+      required: true
+    },
+    tablist: {
+      type: Object,
       required: true
     }
   }

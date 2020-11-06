@@ -16,7 +16,11 @@
 
 <script>
 export default {
-  props: [ 'attr' ]
+  props: {
+    attr: {
+      required: true
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
