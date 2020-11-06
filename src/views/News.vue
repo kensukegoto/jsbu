@@ -3,11 +3,11 @@
   <main>
     <section>
       <h2>ニュース一覧</h2>
-      <NewsTab class="m-tab" :type="type" @change-tab="type => changeTab(type)" />
-      <p class="select">"全て"</p>
+      <NewsTab class="m-tab" :tablist="tablist" :type="state.type" @change-tab="type => changeTab(type)" />
+      <p class="select">{{ state.label }}</p>
       <div class="card-box__outer">
         <ul class="card-box">
-          <li class="item" v-for="(item,key) of list" :key="key">
+          <li class="item" v-for="(item,key) of state.list" :key="key">
             <NewsListItem :attr="item" />
           </li>
         </ul>
@@ -21,8 +21,9 @@
 import PankuzuList from "@/components/common/PankuzuList";
 import NewsListItem from "@/components/common/NewsListItem";
 import NewsTab from "@/components/news/NewsTab";
-// import bList from "@/components/block/b-List";
 import axios from "axios"
+
+import { computed, reactive } from 'vue';
 
 export default {
   components:{
@@ -31,45 +32,63 @@ export default {
     NewsListItem
     // bList
   },
-  data(){
-    return {
+  setup(){
+
+    const tablist = {
+      all : '全て',
+      info: 'お知らせ',
+      topic: 'トピック',
+      event: 'イベント',
+      report: 'レポート'
+    }
+
+    const state = reactive({
       type: 'all',
+      label: computed(() => {
+        return `"${tablist[state.type]}"`
+      }),
       list: [],
       all:[],
       info:[],
       topic:[],
       event:[],
       report:[]
-    }
-  },
-  created(){
+    });
+
     axios.get('/data/all.json')
       .then((response) => {
-        this.all = response.data
-        this.list = [...this.all]
+        state.all = response.data
+        state.list = [...state.all]
       })
       .catch((e) => {
         alert(e);
       });
-  },
-  methods:{
-    changeTab(type){
-      this.type = type
-      if(this[type].length) {
-        this.list = this[type]
+    
+    function changeTab(type){
+
+      state.type = type
+      if(state[type].length) {
+        state.list = [...state[type]]
         return
       }
 
       axios.get(`/data/${type}.json`)
         .then((response) => {
-          this[type] = response.data
-          this.list = [...this[type]]
+          state[type] = response.data
+          state.list = [...state[type]]
         })
         .catch((e) => {
           alert(e);
         });
     }
-  }
+
+    return {
+      state,
+      changeTab,
+      tablist
+    }
+
+  },
 }
 </script>
 <style lang="scss" scoped>
