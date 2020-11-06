@@ -1,16 +1,16 @@
 <template>
-  <bHeader />
+  <TheHeader />
   <router-view/>
-  <bFooter/>
+  <TheFooter/>
 </template>
 
 <script>
-import bHeader from "@/components/block/b-Header";
-import bFooter from "@/components/block/b-Footer";
+import TheHeader from "@/components/common/TheHeader";
+import TheFooter from "@/components/common/TheFooter";
 export default {
   components:{
-    bHeader,
-    bFooter
+    TheHeader,
+    TheFooter
   }
 }
 </script>

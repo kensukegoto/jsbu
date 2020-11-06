@@ -1,19 +1,17 @@
 <template>
   <header>
     <div class="inner">
-      <Logo class="logo" />
-      <Menu />
+      <router-link to="/" class="logo"><img src="@/assets/image/logo.png" alt=""></router-link>
+      <MenuList />
     </div>
   </header>
 </template>
 
 <script>
-import Logo from "@/components/component/c-Logo";
-import Menu from "@/components/module/m-Menu";
+import MenuList from "@/components/common/MenuList";
 export default {
   components:{
-    Logo,
-    Menu
+    MenuList
   }
 }
 </script>

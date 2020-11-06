@@ -1,23 +1,22 @@
 <template>
   <main>
-    <bSlider class="slider" />
-    <bAbout class="about" />
-    <bList class="list" />
+    <SlideShow class="slider" />
+    <AboutJsbu class="about" />
+    <NewsList class="list" />
   </main>
 </template>
 
 <script>
-import bSlider from "@/components/block/b-Slider";
-import bAbout from "@/components/block/b-About";
-import bList from "@/components/block/b-List";
-
+import SlideShow from "@/components/top/SlideShow";
+import AboutJsbu from "@/components/top/AboutJsbu";
+import NewsList from "@/components/top/NewsList";
 
 export default {
   name: 'App',
   components: {
-    bSlider,
-    bAbout,
-    bList,
+    SlideShow,
+    AboutJsbu,
+    NewsList
   }
 }
 </script>

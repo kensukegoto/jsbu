@@ -3,7 +3,7 @@
     <div class="list__inner">
       <ul class="card__box">
           <li class="item" v-for="(item,key) of newlist" :key="key">
-            <mCard :attr="item" />
+            <NewsListItem :attr="item" />
           </li>
       </ul>
       <a class="btn">ニュース一覧へ</a>
@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import mCard from "@/components/module/m-Card";
+import NewsListItem from "@/components/common/NewsListItem";
 import axios from "axios"
 
 export default {
   components:{
-    mCard
+    NewsListItem
   },
   data(){
     return {

@@ -1,14 +1,14 @@
 <template>
-  <bPankuzu />
+  <PankuzuList />
   <main>
     <section>
       <h2>ニュース一覧</h2>
-      <mTab class="m-tab" :type="type" @change-tab="type => changeTab(type)" />
+      <NewsTab class="m-tab" :type="type" @change-tab="type => changeTab(type)" />
       <p class="select">"全て"</p>
       <div class="card-box__outer">
         <ul class="card-box">
           <li class="item" v-for="(item,key) of list" :key="key">
-            <mCard :attr="item" />
+            <NewsListItem :attr="item" />
           </li>
         </ul>
       </div>
@@ -18,17 +18,17 @@
 
 <script>
 
-import bPankuzu from "@/components/block/b-Pankuzu";
-import mTab from "@/components/module/m-Tab";
-import mCard from "@/components/module/m-Card";
+import PankuzuList from "@/components/common/PankuzuList";
+import NewsListItem from "@/components/common/NewsListItem";
+import NewsTab from "@/components/news/NewsTab";
 // import bList from "@/components/block/b-List";
 import axios from "axios"
 
 export default {
   components:{
-    bPankuzu,
-    mTab,
-    mCard
+    PankuzuList,
+    NewsTab,
+    NewsListItem
     // bList
   },
   data(){

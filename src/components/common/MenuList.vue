@@ -7,17 +7,17 @@
       <li><a>体験入部</a></li>
     </ul>
   </div>
-  <Burger class="burger" @click="changeActive" :isActive="isActive" />
+  <BurgerMenu class="burger" @click="changeActive" :isActive="isActive" />
 </template>
 
 <script>
-import Burger from "@/components/component/c-Burger"
+import BurgerMenu from "@/components/common/BurgerMenu"
 import { ref,watch } from "vue"
 import getWinW from '@/core/windowWidth'
 
 export default {
   components:{
-    Burger
+    BurgerMenu
   },
   setup() {
 
