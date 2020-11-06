@@ -2,7 +2,7 @@
   <section class="list">
     <div class="list__inner">
       <ul class="card__box">
-          <li class="item" v-for="(item,key) of newlist" :key="key">
+          <li class="item" v-for="(item,key) of newsList" :key="key">
             <NewsListItem :attr="item" />
           </li>
       </ul>
@@ -14,30 +14,28 @@
 <script>
 import NewsListItem from "@/components/common/NewsListItem";
 import axios from "axios"
+import { ref, watch } from 'vue';
 
 export default {
   components:{
     NewsListItem
   },
-  data(){
+  async setup(){
+    const list = ref([])
+    const newsList = ref([])
+
+    watch(list,()=>{
+      newsList.value = list.value.slice(0,5)
+    })
+
+    list.value = await axios.get('/data/all.json').then(res => res.data)
+
     return {
-      list: []
+      list,
+      newsList
     }
+
   },
-  async beforeCreate(){
-    axios.get('/data/all.json')
-      .then((response) => {
-        this.list = response.data;
-      })
-      .catch((e) => {
-        alert(e);
-      });
-  },
-  computed:{
-    newlist(){
-      return this.list.slice(0,5)
-    }
-  }
 }
 </script>
 
