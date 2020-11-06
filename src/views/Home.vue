@@ -1,6 +1,14 @@
 <template>
   <main>
-    <SlideShow class="slider" />
+      
+    <Suspense>
+      <template #default>
+        <SlideShow class="slider" />
+      </template>
+      <template #fallback>
+        Loading...
+      </template>
+    </Suspense>
     <AboutJsbu class="about" />
     <NewsList class="list" />
   </main>

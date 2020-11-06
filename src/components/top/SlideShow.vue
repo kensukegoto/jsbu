@@ -1,7 +1,7 @@
 <template>
   <section class="slider">
     <div class="slider__inner">
-      <div class="swiper__wrapper" v-if="isReady">
+      <div class="swiper__wrapper">
         <swiper
           :slides-per-view="1"
           :space-between="0"
@@ -22,8 +22,6 @@
             clickable: true,
             el: '.swiper-pagination'
           }"
-          @swiper="onSwiper"
-          @slideChange="onSlideChange"
         >
           <swiper-slide class="slide" v-for="(item,key) of slideList" :key="key">
             <a>
@@ -36,7 +34,6 @@
         <a class="swiper-button swiper-button-next"></a>
         <a class="swiper-button swiper-button-prev"></a>
       </div>
-
     </div>
   </section>
 </template>
@@ -49,32 +46,33 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 SwiperCore.use([ Navigation,Pagination ]);
 
+import { ref, watch } from 'vue';
+
 export default {
   name: 'Slider',
-  data: () => ({
-    mySwiper : null,
-    isReady: false,
-    list : []
-  }),
-  beforeCreate(){
-    axios.get('/data/all.json')
-      .then((response) => {
-        this.list = response.data;
-        this.isReady = true
-      })
-      .catch((e) => {
-        alert(e);
-      });
-  },
   components: {
     Swiper,
     SwiperSlide,
   },
-  computed:{
-    slideList(){
-      return this.list.slice(0,6)
+  async setup(){
+
+    const list = ref([])
+    const slideList = ref([])
+
+    watch(list,()=>{
+      slideList.value = list.value.slice(0,6)
+    })
+
+    list.value = await axios.get('/data/all.json').then(res => res.data)
+
+
+    return {
+      list,
+      slideList
     }
+
   }
+
 }
 </script>
 
