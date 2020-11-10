@@ -82,7 +82,7 @@ export default {
   padding: 28px 12px 32px;
   @include media(m){
     margin-top: 36px;
-    padding: 36px 0 36px;
+    padding: 36px 0 88px;
   }
 }
 
