@@ -1,13 +1,13 @@
 <template>
   <article class="card">
-    <router-link class="tmb" :to="`/news/${attr.id}`">
+    <a class="tmb">
       <figure>
         <img :src="`/image/${attr.image}`" alt="">
       </figure>
-    </router-link>
+    </a>
     <div class="txt">
       <time>2020.11.3</time>
-      <h3><router-link :to="`/news/${attr.id}`">{{ attr.title }}</router-link></h3>
+      <h3><a>{{ attr.title }}</a></h3>
       <p>{{ attr.description }}</p>
       <a class="tag">{{ attr.category }}</a>
     </div>

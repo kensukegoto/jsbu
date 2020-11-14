@@ -13,31 +13,12 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "news" */ '../views/News')
-  },
-  {
-    path: '/news/:newsId',
-    name: 'NewsId',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => {
-      return import(/* webpackChunkName: "news" */ '../views/News/template')
-    }
+    component: () => import(/* webpackChunkName: "about" */ '../views/News.vue')
   },
   {
     path: '/member',
     name: 'Member',
-    component: () => {
-      
-      return new Promise(reso => {
-        setTimeout(() => {
-          reso(import(/* webpackChunkName: "member" */ '../views/Member.vue'))
-
-        },1000)
-      })
-      // return import(/* webpackChunkName: "member" */ '../views/Member.vue')
-    }
+    component: () => import('../views/Member.vue')
   }
 ]
 
