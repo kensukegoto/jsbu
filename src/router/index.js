@@ -23,7 +23,10 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => {
       return import(/* webpackChunkName: "news" */ '../views/News/template')
-    }
+    },
+    props: route => ({
+      newsId: Number(route.params.newsId)
+    })
   },
   {
     path: '/member',
