@@ -2,8 +2,14 @@
   <div class="shadow" v-show="isActive"></div>
   <div class="gnavi" v-show="isActive">
     <ul class="gnavi__lists">
-      <li><router-link to="/news">ニュース</router-link></li>
-      <li><router-link to="/member">部員</router-link></li>
+      <li>
+        <router-link to="/news" v-if="conf && !conf.isChild">ニュース</router-link>
+        <a href="/news" v-else>ニュース</a>
+      </li>
+      <li>
+        <router-link to="/member" v-if="conf && !conf.isChild">部員</router-link>
+        <a href="/news" v-else>部員</a>
+      </li>
       <li><a>体験入部</a></li>
     </ul>
   </div>
@@ -18,6 +24,11 @@ import getWinW from '@/core/windowWidth'
 export default {
   components:{
     BurgerMenu
+  },
+  inject: {
+    conf: {
+      from: 'conf'
+    }
   },
   setup() {
 

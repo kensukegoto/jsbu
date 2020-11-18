@@ -1,6 +1,6 @@
 <template>
   <article class="card">
-    <a class="tmb">
+    <a class="tmb" :href="`/news/${attr.url}`">
       <figure>
         <img :src="`/image/${attr.image}`" alt="">
       </figure>

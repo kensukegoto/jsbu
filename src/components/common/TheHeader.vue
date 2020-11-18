@@ -1,7 +1,8 @@
 <template>
   <header>
     <div class="inner">
-      <router-link to="/" class="logo"><img src="@/assets/image/logo.png" alt=""></router-link>
+      <router-link to="/" class="logo" v-if="conf && !conf.isChild"><img src="@/assets/image/logo.png" alt=""></router-link>
+      <a class="logo" href="/" v-else><img src="@/assets/image/logo.png" alt=""></a>
       <MenuList />
     </div>
   </header>
@@ -12,6 +13,11 @@ import MenuList from "@/components/common/MenuList";
 export default {
   components:{
     MenuList
+  },
+  inject: {
+    conf: {
+      from: 'conf'
+    }
   }
 }
 </script>
