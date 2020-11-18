@@ -1,6 +1,7 @@
 <template>
   <section class="list">
     <div class="list__inner">
+      <h2>新着</h2>
       <ul class="card__box">
           <li class="item" v-for="(item,key) of newsList" :key="key">
             <NewsListItem :attr="item" />
@@ -28,8 +29,8 @@ export default {
       newsList.value = list.value.slice(0,5)
     })
 
-    list.value = await axios.get('/data/all.json').then(res => res.data)
-
+    list.value = await axios.get('/data/all.json').then(res => res.data);
+    
     return {
       list,
       newsList
@@ -38,8 +39,43 @@ export default {
   },
 }
 </script>
+<style lang="scss">
 
+#news-item {
+  .list{
+    @include media(m){
+      padding-top: 0;
+    }
+    &__inner {
+      padding-top: 28px;
+      @include media(m){
+        padding-top: 32px;
+      }
+
+      h2 {
+        display: block;
+        text-align: center;
+        font-size: 2rem;
+        @include media(m){
+          font-size: 2.4rem;
+        }
+      }
+      .card__box{
+        margin-top: 28px;
+        @include media(m){
+          margin-top: 32px;
+        }
+      }
+    }
+
+  }
+}
+
+</style>
 <style lang="scss" scoped>
+h2 {
+  display: none;
+}
 .list{
   padding: 12px 12px 32px;
   background-color: $yellow;
