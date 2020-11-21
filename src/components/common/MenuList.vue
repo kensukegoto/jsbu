@@ -3,12 +3,12 @@
   <div class="gnavi" v-show="isActive">
     <ul class="gnavi__lists">
       <li>
-        <router-link to="/news" v-if="conf && !conf.isChild">ニュース</router-link>
+        <router-link to="/news" v-if="!conf || !conf.isChild">ニュース</router-link>
         <a href="/news" v-else>ニュース</a>
       </li>
       <li>
-        <router-link to="/member" v-if="conf && !conf.isChild">部員</router-link>
-        <a href="/news" v-else>部員</a>
+        <router-link to="/member" v-if="!conf || !conf.isChild">部員</router-link>
+        <a href="/member" v-else>部員</a>
       </li>
       <li><a>体験入部</a></li>
     </ul>
