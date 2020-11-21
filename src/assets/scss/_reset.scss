@@ -104,6 +104,7 @@ hr {
 }
 
 input, select {
+  box-sizing: border-box;
   vertical-align:middle;
 }
 img {
