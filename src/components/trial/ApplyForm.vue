@@ -18,18 +18,17 @@
         <p class="title">第{{ e1 }}希望日：</p>
         <p class="input select">
           <select name="" id="">
-            <option value="">11月21日</option>
-            <option value="">11月22日</option>
+            <option v-for="(day,key) of dateList" :key="key" :value="day">{{ day }}</option>
           </select>
         </p>
         <p class="input check">
-          <span v-for="(e,i) of days" :key='i'>
+          <span v-for="(e,i) of timeList" :key='i'>
             <input type="checkbox" :id="`day${e1}_${e.name}`" :name="`day${e1}_${e.name}`">
             <label :for="`day${e1}_${e.name}`">{{ e.label }}</label>
           </span>
         </p>
       </div>
-      <div class="form__item tele">
+      <div class="form__item">
         <p class="title">その他：</p>
         <p class="input textarea"><textarea></textarea></p>
       </div>
@@ -41,7 +40,13 @@
 export default {
   setup(){
 
-    const days = [
+    const today = new Date();
+    const dateList = [...new Array(30)].map(() => {
+      const day = new Date(today.setDate( today.getDate() + 1 ));
+      return `${day.getMonth() + 1}月${day.getDate()}日`;
+    });
+
+    const timeList = [
       { name: 'all',label:'いつでも' },
       { name: '11',label:'11:00 ~' },
       { name: '12',label:'12:00 ~' },
@@ -56,7 +61,8 @@ export default {
     ];
 
     return {
-      days
+      dateList,
+      timeList
     }
   }
 }
