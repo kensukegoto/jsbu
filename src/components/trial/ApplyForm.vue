@@ -14,7 +14,7 @@
         <p class="title">電話番号：</p>
         <p class="input"><input type="text"></p>
       </div>
-      <div class="form__item day1" v-for="(e1) of [1,2,3]" :key="e1">
+      <div :class="`form__item day${e1}`" v-for="(e1) of [1,2,3]" :key="e1">
         <p class="title">第{{ e1 }}希望日：</p>
         <p class="input select">
           <select name="" id="">
@@ -81,17 +81,39 @@ export default {
 .form {
   &__item {
     margin-top: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid $grey;
+    @include media(m){
+      margin-top: 32px;
+      padding-bottom: 32px;
+      &::after{
+        content: "";
+        display: block;
+        clear: both;
+      }
+    }
     .title {
       font-weight: bold;
+      @include media(m){
+        width: 20%;
+        float: left;
+      }
     }
     .input {
       margin-top: 1em;
+      @include media(m){
+        margin-top: 0;
+        width: 420px;
+        margin-right: calc(80% - 420px);
+        float: right;
+      }
       input,
       select {
         width: 100%;
         padding: 14px 8px;
         border: none;
         background-color: $greyLight;
+
       }
 
       // 希望日
@@ -103,7 +125,7 @@ export default {
         &::after{
           content: '▼';
           font-size: 14px;
-          display: $greyDark;
+          color: $greyDark;
           position: absolute;
           top: 50%;
           right: 8px;
@@ -118,10 +140,23 @@ export default {
         margin-top: 0;
         display: flex;
         flex-wrap: wrap;
+        @include media(m){
+          width: 80%;
+          float: right;
+          margin-right: 0;
+          padding-right: 120px;
+
+        }
      
         span {
           margin-top: 1em;
           width: 25%;
+          @include media(m){
+            width: calc(100% / 6);
+            &:nth-child(-n + 6){
+              margin-top: 32px;
+            }
+          }
           input {
             display: none;
           }
