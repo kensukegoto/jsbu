@@ -29,6 +29,10 @@
           </span>
         </p>
       </div>
+      <div class="form__item tele">
+        <p class="title">その他：</p>
+        <p class="input textarea"><textarea></textarea></p>
+      </div>
     </form>
   </div>
 </template>
@@ -116,6 +120,7 @@ export default {
 
       }
 
+
       // 希望日
       &.select {
         position: relative;
@@ -190,6 +195,25 @@ export default {
               margin-top: 2px;
               margin-left: 2px;
               border-radius: 50%;
+          }
+        }
+      }
+
+      // その他
+      &.textarea{
+        
+        @include media(m){
+          width: 80%;
+          margin-right: 0;
+        }
+        textarea{
+          width: 100%;
+          height: 120px;
+          border: none;
+          background: $greyLight;
+          padding: 8px;
+          @include media(m){
+            height: 240px;
           }
         }
       }
