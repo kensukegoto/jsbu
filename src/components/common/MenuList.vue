@@ -10,7 +10,10 @@
         <router-link to="/member" v-if="!conf || !conf.isChild">部員</router-link>
         <a href="/member" v-else>部員</a>
       </li>
-      <li><a>体験入部</a></li>
+      <li>
+        <router-link to="/trial" v-if="!conf || !conf.isChild">体験入部</router-link>
+        <a href="/trial" v-else>体験入部</a>
+      </li>
     </ul>
   </div>
   <BurgerMenu class="burger" @click="changeActive" :isActive="isActive" />
